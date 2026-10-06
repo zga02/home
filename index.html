@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoë Abersold</title>
+  <meta name="description" content="Zoë is a multidisciplinary designer with a passion for shaping impactful digital experiences and a love for combining accessibility with artistic expression.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Left: pinned intro + details -->
+  <aside class="about">
+    <div class="about-top">
+      <h1 class="lede">
+        <span class="hl">Zoë Abersold</span> is a multidisciplinary designer °.*₊ shaping
+        impactful digital experiences, combining accessibility
+        with artistic expression. *:･｡ Currently studying at the University of
+        Pittsburgh.
+      </h1>
+      <button class="more-toggle" aria-expanded="false" aria-controls="more">Read More</button>
+    </div>
+
+    <div class="more" id="more">
+      <div class="more-inner">
+      <dl class="details">
+        <div>
+          <dt>Contact</dt>
+          <dd>
+            <button type="button" class="copy-email" data-email="zgabersold@gmail.com" aria-label="Copy email address zgabersold@gmail.com"><span class="ce-label">Email</span><span class="ce-addr">zgabersold@gmail.com</span><span class="ce-done">Copied!</span></button>
+            <span class="sr-only" role="status" id="copy-status"></span>
+            <a href="https://drive.google.com/file/d/1C606mTB1dDc9ivERfxnuh5we28JQ7m_e/view?usp=sharing">Resume</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Education</dt>
+          <dd>University of Pittsburgh<br>BA Digital Narrative and Interactive Design</dd>
+        </div>
+      </dl>
+      <p class="colophon">Site built with HTML, CSS, and JavaScript.<br>All Rights Reserved. Designed with &lt;3</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Middle: scrolling projects. Click an image to open its popup. -->
+  <main class="work" id="work">
+
+    <article class="project">
+      <div class="side">
+        <h2>Matcha Haus</h2>
+        <span class="side-meta">2025</span>
+        <span class="side-count">1 / 3</span>
+      </div>
+      <div class="body">
+        <button class="thumb" data-project="matcha" aria-haspopup="dialog" aria-label="Open Matcha Haus project details" style="--c:#dfe9d4">
+          <img src="https://framerusercontent.com/images/Al57s4qEfOQBnemJM3aCzOoUuuI.png" alt="Matcha Haus label design" loading="lazy">
+        </button>
+        <div class="caption">
+          <div class="cap-meta"><span>Case Study</span><span>Brand Design Study</span></div>
+          <p>Developing a cohesive brand identity for Matcha Haus through iterative design, user research, and visual experimentation.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="side">
+        <h2>hr.pitt.edu</h2>
+        <span class="side-meta">2025</span>
+        <span class="side-count">2 / 3</span>
+      </div>
+      <div class="body">
+        <button class="thumb" data-project="hr" aria-haspopup="dialog" aria-label="Open hr.pitt.edu project details" style="--c:#d6dcf2">
+          <img src="https://framerusercontent.com/images/Rp44DPA8cgWjXcngkTutPMNtQI.png?lossless=1" alt="Redesign of the landing page for hr.pitt.edu" loading="lazy">
+        </button>
+        <div class="caption">
+          <div class="cap-meta"><span>Case Study</span><span>Heuristic evaluation, usability testing</span></div>
+          <p>Elevating the hr.pitt.edu user experience by identifying and resolving key usability and accessibility challenges.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="side">
+        <h2>PeopleSoft</h2>
+        <span class="side-meta">2025</span>
+        <span class="side-count">3 / 3</span>
+      </div>
+      <div class="body">
+        <button class="thumb" data-project="peoplesoft" aria-haspopup="dialog" aria-label="Open PeopleSoft project details" style="--c:#f2dccd">
+          <img src="https://framerusercontent.com/images/Fk7L89ckkBXdQRbWvblMzEz8.png" alt="Screenshot of PeopleSoft's interface" loading="lazy">
+        </button>
+        <div class="caption">
+          <div class="cap-meta"><span>Case Study</span><span>Student experience</span></div>
+          <p>Design insights for improving academic task flows and creating a more intuitive student experience in campus management systems.</p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Right: vertical rail -->
+  <nav class="rail" aria-label="Site">
+    <span class="rail-links"><a href="#work">Work</a> <a href="https://drive.google.com/file/d/1C606mTB1dDc9ivERfxnuh5we28JQ7m_e/view?usp=sharing">Resume</a></span>
+    <span id="clock" aria-hidden="true">00:00:00</span>
+    <span>Updated <span id="year">2026</span></span>
+  </nav>
+
+</div>
+
+<!-- Popup -->
+<dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+  <div class="modal-bar">
+    <span>Case Study</span>
+    <button class="modal-close" type="button">Close</button>
+  </div>
+  <div class="modal-body"></div>
+</dialog>
+
+<!-- Project content (cloned into the popup) -->
+<template id="project-matcha">
+  <h2 id="modal-title">Brand Design Study: Matcha Haus</h2>
+  <p class="tagline">Developing a cohesive brand identity for Matcha Haus through iterative design, user research, and visual experimentation.</p>
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Graphic designer<br>Researcher</dd></div>
+    <div><dt>Team</dt><dd>Independent research for ENGCMP 0520</dd></div>
+    <div><dt>Duration</dt><dd>1 month</dd></div>
+  </dl>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/Al57s4qEfOQBnemJM3aCzOoUuuI.png" alt="Matcha Haus label design">
+    <figcaption>Matcha Haus Label Design</figcaption>
+  </figure>
+
+  <h3>Overview</h3>
+  <p>Matcha Haus is a brand design project centered on building a bold, expressive identity that resonates with a design-conscious audience. To ground the brand in real user insight, I prioritized the discovery of design preferences and brand perceptions within the target demographic. I recruited participants for two rounds of interviews, ensuring a representative mix that aligned with the intended user base, and developed a structured script to maintain consistency across sessions. These conversations informed a visual direction rooted in visual clarity, emotional connection, and an unconventional aesthetic.</p>
+
+  <h3>Approach</h3>
+  <p>Drawing from audience insights, I crafted mission statements and developed a cohesive visual system—including a pink-forward color palette, intentional green accents, and experimental typography. Together, these elements establish a distinctive visual and verbal identity that captures the balance of calm and boldness at the heart of Matcha Haus.</p>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/SNqggbOxRS6kJgfUqvZ6tyt2CkA.png" alt="Matcha Haus brand visuals">
+    <img src="https://framerusercontent.com/images/ObOkwEsHLovzSrI5hqp9MxfkF0s.png" alt="Matcha Haus style guide and initial logo designs">
+    <figcaption>Style guide &amp; initial logo designs shown during testing.</figcaption>
+  </figure>
+
+  <h3>Qualitative Insight Gathering</h3>
+  <p>Conducted two rounds of Zoom interviews:</p>
+  <ul>
+    <li><em>Round 1:</em> Collected feedback on foundational branding elements, including mission statements, naming options, and early visual directions (colors, fonts).</li>
+    <li><em>Round 2:</em> Presented logo design variations and captured detailed reactions, preferences, and emotional responses to each concept.</li>
+  </ul>
+  <p>All sessions followed a standardized format, allowing for reliable thematic analysis and comparison across responses.</p>
+
+  <h3>Brand Design Synthesis</h3>
+  <p>Analyzed qualitative feedback to identify recurring themes and preferences. Mapped insights to each brand element—color palette, typography, tone, and logo style—to ensure alignment with audience expectations. Prioritized design elements that resonated with users both visually and emotionally.</p>
+
+  <h3>Identity Refinement &amp; Prototyping</h3>
+  <p>Created early logo prototypes based on audience input, exploring multiple directions in style and form. Iterated on logo concepts to test for visual recognition, emotional resonance, and brand fit.</p>
+  <p>Developed a comprehensive style guide outlining core visual standards—logo usage, color palette, typography, and layout guidance—to ensure consistency across future applications. Refined branding assets to reflect both user feedback and strategic positioning.</p>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/teFEfgiuj0puYV3El4Ok55u8H7M.png" alt="Final one-page Matcha Haus brand manual">
+    <figcaption>Final one-page brand manual.</figcaption>
+  </figure>
+
+  <h3>Outcomes</h3>
+  <p>I developed a user-centered brand identity based on direct audience feedback, resulting in a comprehensive style guide and flexible logo system for consistent, scalable use. To support stakeholder communication, I created a clear, professional slide deck presenting research insights and design rationale. These deliverables strengthened the brand’s visual and emotional connection, building a foundation for lasting recognition and engagement.</p>
+  <p><a href="https://drive.google.com/file/d/1QR2g4_kf134W6JRBmTBy62QL2Ssxe1LN/view?usp=sharing" target="_blank" rel="noopener">See my full presentation</a></p>
+</template>
+
+<template id="project-hr">
+  <h2 id="modal-title">Creating a User-Centric Interface for hr.pitt.edu Through Usability Testing and Heuristic Evaluation</h2>
+  <p class="tagline">Elevating the hr.pitt.edu user experience by identifying and resolving key usability and accessibility challenges.</p>
+  <dl class="meta">
+    <div><dt>Role</dt><dd>UX/UI designer<br>Researcher</dd></div>
+    <div><dt>Team</dt><dd>Zoë Abersold, Saskia Van’t Hof, Nathaniel Balkaran</dd></div>
+    <div><dt>Duration</dt><dd>4 weeks</dd></div>
+  </dl>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/Rp44DPA8cgWjXcngkTutPMNtQI.png?lossless=1" alt="Redesign of the landing page for hr.pitt.edu">
+    <figcaption>Office of Human Resources Landing Page Redesign</figcaption>
+  </figure>
+
+  <h3>Overview</h3>
+  <p>hr.pitt.edu is the University of Pittsburgh’s HR portal, a critical tool for employees to access benefits, policies, leave information, and employment services. We conducted a heuristic evaluation to identify navigation barriers, accessibility issues, and content redundancies that were frustrating users and complicating task completion.</p>
+
+  <h3>Challenges</h3>
+  <p>Despite its importance, the site struggled to support users in completing routine tasks efficiently. Many visitors became disoriented while navigating through subpages, encountering confusing terminology, inconsistent layouts, and redundant information. Accessibility limitations further complicated the experience for users relying on screen readers or keyboard navigation. Our challenge was to uncover why these problems persisted and how to resolve them with practical, evidence-based recommendations.</p>
+
+  <h3>Research Approach</h3>
+  <p>We applied a mixed-methods strategy that blended both qualitative and quantitative insights to evaluate hr.pitt.edu's user experience.</p>
+  <ul>
+    <li><strong>Heuristic Evaluation:</strong> Using Nielsen-Molich’s principles, we identified design issues related to navigation, consistency, and error prevention.</li>
+    <li><strong>Accessibility Testing:</strong> We tested for WCAG 2.1 compliance using screen readers, keyboard-only navigation, and contrast assessments to uncover barriers for users with impairments.</li>
+    <li><strong>Moderated Usability Testing:</strong> We observed five participants—two senior students and three university employees—completing tasks such as locating benefit termination details, finding faculty contract information, and navigating FMLA leave policies. Each participant verbalized their thought process and completed a SUS (System Usability Scale) survey afterward.</li>
+    <li><strong>User Behavior Analysis:</strong> We reviewed data from Google Analytics and SiteImprove to identify trends in page engagement, traffic flow, and high-frequency search terms, helping us understand where users were getting stuck or confused.</li>
+  </ul>
+  <p>This approach allowed us to evaluate the site from both system-level and human perspectives, revealing usability breakdowns rooted in design, language, and structure.</p>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/jpJvErtDq4ExNJiBo8kJMewda4.png" alt="Dropdown menu under Employee Resources on hr.pitt.edu">
+    <img src="https://framerusercontent.com/images/5PVHkDw2tCqFhCucTynqe6OWs.png" alt="Inconsistent page layouts on hr.pitt.edu">
+    <figcaption>Fig 1: Dropdown menu under “Employee Resources” contains unclear, jargon-heavy labels.<br>Fig 2: Inconsistent page layouts create a disjointed browsing experience.</figcaption>
+  </figure>
+
+  <h3>Key Insights</h3>
+  <p>Our evaluation revealed that users experienced frequent challenges with wayfinding. When navigating through deeper sections of the site, many opted to return to the homepage rather than retrace their steps, suggesting a lack of clear orientation cues. We also observed repeated content across multiple pages and the use of terminology such as “Client Services” and “HCM Solutions,” which, while meaningful internally, may not be immediately intuitive to all users.</p>
+  <p>In terms of accessibility, we identified several areas for improvement. Some screen readers were unable to access hidden text within dropdown menus, and certain pages lacked clear semantic headings or alternative text for images. Additionally, interactive elements were not always fully navigable via keyboard, and visual indicators for keyboard focus were often difficult to see. These factors limited the overall accessibility of the site and may have presented barriers for users who rely on assistive technologies.</p>
+
+  <h3>Recommendations</h3>
+  <p>To address these issues, we prioritized actions based on impact and feasibility:</p>
+  <h4>High Priority</h4>
+  <ul>
+    <li>Consolidate fragmented task pages into centralized overviews with anchor links for quick navigation.</li>
+    <li>Replace the confusing “I Want To” dropdown with a prominent, real search bar.</li>
+  </ul>
+  <h4>Medium Priority</h4>
+  <ul>
+    <li>Implement breadcrumb navigation to improve user orientation within the site.</li>
+    <li>Add visual indicators (e.g., lock icons) for restricted links to set clear access expectations.</li>
+  </ul>
+  <h4>Low Priority</h4>
+  <ul>
+    <li>Support minimalist design by removing redundant content, clarifying labels, and standardizing layouts to reduce cognitive load.</li>
+  </ul>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/wssrWtKPNRIaY11GBUBIAEGoTg.png" alt="Anchor list visual index for a consolidated overview page">
+    <figcaption>Example of Anchor List Visual Index for a Consolidated Overview Page.</figcaption>
+  </figure>
+
+  <h3>Outcome</h3>
+  <p>Our final report offered actionable strategies to improve both usability and accessibility on hr.pitt.edu. By consolidating content, streamlining navigation, and addressing accessibility gaps, the site can better support all users—including those with visual, cognitive, or motor impairments. The University of Pittsburgh now has a roadmap to build a more functional and inclusive HR portal, rooted in tested research and real user behavior.</p>
+  <p><a href="https://drive.google.com/file/d/13OPjuFyeCWpECn_50v2h8YmLkX_CMgWQ/view?usp=sharing" target="_blank" rel="noopener">Read the full report</a></p>
+</template>
+
+<template id="project-peoplesoft">
+  <h2 id="modal-title">Reimagining the Student Experience in PeopleSoft</h2>
+  <p class="tagline">Design insights for improving academic task flows and creating a more intuitive student experience in campus management systems.</p>
+  <dl class="meta">
+    <div><dt>Role</dt><dd>UX/UI designer<br>Researcher</dd></div>
+    <div><dt>Team</dt><dd>Zoë Abersold, Saskia Van’t Hof, Nathaniel Balkaran</dd></div>
+    <div><dt>Duration</dt><dd>2 weeks</dd></div>
+  </dl>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/Fk7L89ckkBXdQRbWvblMzEz8.png" alt="Screenshot of PeopleSoft's interface">
+    <figcaption>Screenshot of PeopleSoft’s interface.</figcaption>
+  </figure>
+
+  <h3>Overview</h3>
+  <p>PeopleSoft, developed by Oracle, is an academic management system used by over 1,000 institutions worldwide. At the University of Pittsburgh, it serves as the primary platform for students to enroll in courses, track academic progress, and access records.</p>
+
+  <h3>The Problem</h3>
+  <p>Despite offering necessary tools, PeopleSoft’s user experience is often frustrating. Students struggle with scheduling classes, understanding progress reports, and filtering course information. The interface feels cluttered, confusing, and inconsistent, making navigation and task completion difficult.</p>
+
+  <h3>Understanding the User</h3>
+  <p>We conducted user interviews with Pitt students as they completed key tasks while thinking aloud. These sessions uncovered widespread confusion and frustration, particularly around finding information and navigating menus. An empathy map captured users’ feelings of uncertainty, anxiety about missing deadlines, and stress caused by unclear workflows—despite the platform’s strong functional capabilities.</p>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/R5hkYOK6odMvQGkeM2qLzoOOpLc.png" alt="Empathy map of PeopleSoft student users">
+    <img src="https://framerusercontent.com/images/cxl1NsR4OYx2kAqjF3ljJza7yk.png" alt="Quantitative feedback about PeopleSoft's interface">
+    <figcaption>Quantitative feedback highlights persistent confusion and dissatisfaction with PeopleSoft’s interface.</figcaption>
+  </figure>
+
+  <h3>Research Approach</h3>
+  <p>We employed a mixed-method usability study combining qualitative and quantitative techniques. Participants completed a pre-test questionnaire to assess familiarity with PeopleSoft and highlight common goals or frustrations. During sessions, students performed structured tasks like scheduling classes, checking academic progress, and filtering courses by general education requirements, while thinking aloud. Observational research identified points of confusion, and post-test interviews validated emerging patterns. This approach captured both usability issues and the emotional responses they triggered.</p>
+
+  <h3>Key Findings</h3>
+  <p>Several recurring challenges emerged:</p>
+  <ul>
+    <li>The course filtering system was functional but left students uncertain if results matched their degree needs.</li>
+    <li>The Progress Report page was confusing due to unclear labels and difficult navigation.</li>
+    <li>The Schedule Builder had a steep learning curve, causing some users to abandon it.</li>
+    <li>The Planner feature was often overlooked, perceived as redundant or unclear in purpose.</li>
+    <li>Availability of both PeopleSoft Classic and HighPoint CX caused confusion for users.</li>
+  </ul>
+  <p>A dominant theme was cognitive overload. Similar menu terms caused students to click randomly, resulting in frustration and inefficiency. The interface lacked glanceable information and required too many steps to reach key features.</p>
+
+  <figure>
+    <img src="https://framerusercontent.com/images/0wBZR1ZtlOUgHcKGrYHmGuR7s.png" alt="Screenshot of PeopleSoft Classic">
+    <figcaption>Screenshot displaying PeopleSoft Classic.</figcaption>
+  </figure>
+
+  <h3>Design Recommendations</h3>
+  <p>We prioritized our proposed improvements based on severity, frequency, and impact:</p>
+  <h4>High Priority</h4>
+  <ul>
+    <li>We recommend sunsetting PeopleSoft Classic in favor of adopting HighPoint CX to provide a more modern, intuitive, and mobile-responsive user experience.</li>
+    <li>Clarify navigation by consolidating redundant menu items</li>
+    <li>Add hover-over descriptions to provide context before users click</li>
+    <li>Reduce dropdown menus to streamline decision-making</li>
+  </ul>
+  <h4>Medium Priority</h4>
+  <ul>
+    <li>Integrate Progress Report with Course Search more clearly
+      <ul>
+        <li>Highlight the import feature that connects requirements directly to available classes</li>
+        <li>Add visual cues or tooltips to explain how this process works</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>Low Priority</h4>
+  <ul>
+    <li>Improve filter usability by:
+      <ul>
+        <li>Displaying all available filters by default</li>
+        <li>Rewriting vague filter labels to be more specific and intuitive.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Reflections</h3>
+  <p>This project emphasized the importance of accessible, student-centered design in academic tools. Our biggest takeaway was that a platform’s usability is just as critical as its features.</p>
+  <h4>What we learned</h4>
+  <ul>
+    <li><strong>Small changes can have big effects:</strong> Many of the usability issues stemmed from unclear wording or inconsistent placement—not broken functionality.</li>
+    <li><strong>Observation reveals more than surveys:</strong> Watching users struggle in real time provided more actionable insights than self-reported data alone.</li>
+    <li><strong>Design should adapt to users at different stages:</strong> Freshmen and seniors used the system differently; good design needs to serve both.</li>
+  </ul>
+  <h4>Skills developed</h4>
+  <ul>
+    <li>Facilitating and moderating usability tests</li>
+    <li>Synthesizing observational and verbal feedback into design solutions</li>
+    <li>Prioritizing fixes based on user needs, not just system capabilities</li>
+    <li>Adapting research methods to different user experience levels</li>
+  </ul>
+</template>
+
+<a class="top" href="#" id="top" hidden>↑ Top</a>
+</body>
+</html>
